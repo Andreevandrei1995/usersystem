@@ -80,12 +80,12 @@ public class Users {
 
 class Marshal{
     Users users;
-
+//
     public void marshallExample(Object object)throws Exception{
         JAXBContext context=JAXBContext.newInstance(Users.class);
         Marshaller marshaller=context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,Boolean.TRUE);
-        marshaller.marshal(object ,   new File("D:\\txt.xml"));
+        marshaller.marshal(object ,    new File("D:\\txt.xml"));
         }
 
     public void unmarshall()throws Exception{
