@@ -1,0 +1,16 @@
+system\system\service\UserService.class
+system2\dao\Marshal.class
+system\model\Text.class
+system2\model\Text.class
+system2\controller\TextController.class
+system2\model\User.class
+system2\controller\AuthController.class
+system2\dao\Users.class
+system2\dao\Data.class
+system\model\Polzovatel.class
+system\model\Response2.class
+system2\model\Auth.class
+system\model\Strochka.class
+system\dao\UserDao2.class
+system\controller\AuthController.class
+system\dao\UserDao.class

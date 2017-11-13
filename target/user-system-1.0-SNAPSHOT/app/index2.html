@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<script src="../resources/angular.min.js"></script>
+<script type="text/javascript">
+var myApp = angular.module("myApp", []);
+myApp.controller('phoneController',
+    function($scope,$http){
+        $scope.phone ={
+            name:"tyh"
+        };
+
+        $scope.response1 = {};
+
+        $scope.save = function (user){
+            $http.post("http://localhost:8081/index2", user).then(function(response){
+                $scope.phone.name = "111";
+                user.name = response.response1.name;
+            });
+        }
+    }
+);
+
+
+</script>
+
+<html ng-app="myApp">
+<head>
+<meta charset="utf-8">
+</head>
+<body>
+<div ng-controller="phoneController">
+<form>
+    <input ng-class="phone.name">
+    <button ng-click="save(response1)">Ввод</button>
+</form>
+<p>{{response1.name}}</p>
+<p>{{phone.name}}</p>
+</div>
+</body>
+</html>
+
+
+<!--<script src="../resources/angular.min.js"></script>
+<script type="text/javascript">
+    var myApp=angular.module('myApp', []);
+    myApp.controller('phoneController', function($scope) {
+
+        $scope.phone = {
+
+            name: 'Nokia Lumia 630',
+            year: 2014,
+            price: 200,
+            company: {
+                name: 'Nokia',
+                country: 'Финляндия'
+            }
+        }
+    });
+</script>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+<div ng-controller="phoneController">
+    <p>Название: {{phone.name}}</p>
+    <p>Цена: {{phone.price}} $</p>
+    <p>Производитель: {{phone.company.name}}</p>
+</div>
+
+</body>
+</html>-->
