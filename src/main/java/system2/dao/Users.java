@@ -85,7 +85,7 @@ class Marshal{
         JAXBContext context=JAXBContext.newInstance(Users.class);
         Marshaller marshaller=context.createMarshaller();
         marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT,Boolean.TRUE);
-        marshaller.marshal(object ,  new File("D:\\txt.xml"));
+        marshaller.marshal(object ,   new File("D:\\txt.xml"));
         }
 
     public void unmarshall()throws Exception{
