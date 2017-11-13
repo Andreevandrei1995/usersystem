@@ -37,6 +37,6 @@ public class Data {
         Pattern pat;
         pat = Pattern.compile("[^{}:_;]+");
         mat = pat.matcher(string);
-        return mat.matches();
+        return mat.matches() ;
     }
 }
