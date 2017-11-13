@@ -3,11 +3,7 @@
 *.war
 *.jar
 *.ear
+2
 src/main/java/system/*
-1111
-<<<<<<< HEAD
-222
-=======
-333
->>>>>>> b5f0dc0f2973109314baa565da7b26a66ca969b2
+
 
