@@ -39,4 +39,10 @@ public class TextController {
         return users.getListText(login);
     }
 
+    @RequestMapping("/index5")
+    @ResponseBody
+    String index_5(HttpServletRequest request)throws Exception{
+        return "101";
+    }
+
 }
