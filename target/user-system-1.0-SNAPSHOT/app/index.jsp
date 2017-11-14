@@ -42,15 +42,15 @@ $scope.text = {
 text: ""
 };
 
-//$scope.text_show = {
-//    y:"34"
-//};
+$scope.text_show = {
+    y:"34"
+};
 
 
 
 $scope.save = function (request) {
     $http.post("http://localhost:8081/index2", request).then(function (response) {//обновление всех записей списка
-        $scope.text_show.y = response.data;
+        $scope.text_show = response.data;
         console.log($scope.text_show);
         $scope.text.text = "";
     });
