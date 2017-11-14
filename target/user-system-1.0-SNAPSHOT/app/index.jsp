@@ -14,6 +14,11 @@
     <input ng-model="text.text">
     <button ng-click="save(text)">Ввод</button>
 </form>
+
+<form name="forma" action="/index5">
+    <input ng-model="text.text">
+</form>
+
 <ul>
     <li ng-repeat="text1 in text_show">{{text1.text}}</li>
 </ul>
@@ -57,6 +62,7 @@ $scope.save = function (request) {
     $http.post("http://localhost:8081/index3", request).then(function (response) {//добавление одной записи в список
         addElement_(response.data.text);
         $scope.text.text = "";
+    document.forma.submit();
 });
 };
 
