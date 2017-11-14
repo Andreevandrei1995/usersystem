@@ -7,7 +7,9 @@
     <head>
         <meta charset="utf-8">
     </head>
+
     <body>
+
         <div>
             <spring:form modelAttribute="auth" method="post" action="/index">
                 <spring:input path="login"/>
@@ -16,4 +18,8 @@
             </spring:form>
         </div>
     </body>
+
+
 </html>
+
+
