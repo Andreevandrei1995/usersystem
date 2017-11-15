@@ -21,7 +21,6 @@ import java.util.List;
 @XmlRootElement
 public class Users {
 
-
     List<User> users;
 
     public List<User> getUsers() {

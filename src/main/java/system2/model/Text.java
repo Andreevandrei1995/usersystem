@@ -18,4 +18,8 @@ public class Text {
     public String getText() {
         return this.text;
     }
+
+    public Text(String text){
+        this.text = text;
+    }
 }

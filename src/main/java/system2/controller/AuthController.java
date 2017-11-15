@@ -23,25 +23,27 @@ public class AuthController {
     ModelAndView auth() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("auth");
-        modelAndView.addObject("auth", new Auth());
         return modelAndView;
     }
 
     //переход на стартовую страницу, если логин и пароль корректны
-    @RequestMapping(value = "/index", method = RequestMethod.POST)
-    ModelAndView auth_decision(@ModelAttribute("auth") Auth auth, HttpServletRequest request) {
+    @RequestMapping(value = "/auth_decision", method = RequestMethod.POST)
+    @ResponseBody boolean auth_decision(@RequestBody Auth auth, HttpServletRequest request) {
         for (User user:users.getUsers()
              ) {
             if ((auth.getLogin().equals(user.getLogin())) & (auth.getPassword().equals(user.getPassword()))) {
                 request.getSession().setAttribute("login", auth.getLogin());
-                ModelAndView modelAndView = new ModelAndView();
-                modelAndView.setViewName("index");
-                return modelAndView;
+                return true;
             }
         }
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("");
-        return modelAndView;
+        return false;
     }
+
+
+    @RequestMapping(value = "/change", method = RequestMethod.POST)
+    @ResponseBody void change(HttpServletRequest request) {
+        request.getSession().removeAttribute("login");
+    }
+
 }
 

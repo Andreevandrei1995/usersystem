@@ -28,15 +28,9 @@ public class Data {
     }
 
     public void add(Text text){
-        if (check(text.getText()))
         this.listText.add(text);
     }
 
-    public boolean check(String string) {
-        Matcher mat;
-        Pattern pat;
-        pat = Pattern.compile("[^{}:_;]+");
-        mat = pat.matcher(string);
-        return mat.matches() ;
-    }
+
 }
+
