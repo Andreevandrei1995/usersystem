@@ -1,11 +1,10 @@
-.idea/*
+
 468
 *.class
 *.war
 678
 *.jar
 *.ear
-src/main/java/system/*
 
 
 
