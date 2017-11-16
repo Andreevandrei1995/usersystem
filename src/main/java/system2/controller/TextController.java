@@ -30,7 +30,7 @@ public class TextController {
         modelAndView.setViewName("index");
         return modelAndView;
     }
-
+    //при запросе к серверу о добавлении введенного сообщения в базу данных
     @RequestMapping(value="/index2",method = RequestMethod.POST)
     @ResponseBody
     List<Text> index_2(@RequestBody Text text, HttpServletRequest request)throws Exception{
@@ -47,7 +47,7 @@ public class TextController {
                     users.addText(login,text);
                     return users.getListText(login);}
                 else {
-                    List<Text> response = new ArrayList<Text>();
+                    List<Text> response = new ArrayList();
                     response.addAll(users.getListText(login));
                     response.add(new Text("incorrect input"));
                     return response;
@@ -57,18 +57,18 @@ public class TextController {
         }
 
         List<Text> no_login = new ArrayList();
-        Text text_response = new Text();
-        text_response.setText("No login/");
-        no_login.add(text_response);
+        no_login.add(new Text("No login\\"));
         return no_login;
     }
-
+    //для отправки назад сообщения через сервер
     @RequestMapping(value="/index3", method = RequestMethod.POST)
     @ResponseBody
     Text index_3(@RequestBody Text text, HttpServletRequest request)throws Exception{
         return text;
     }
 
+
+    //для инициализации данных на сайте
     @RequestMapping(value="/index4",method = RequestMethod.POST)
     @ResponseBody
     List<Text> index_4(@RequestBody Text text, HttpServletRequest request)throws Exception{
@@ -85,7 +85,7 @@ public class TextController {
 
         List<Text> list = new ArrayList();
         Text text_response = new Text();
-        text_response.setText("No login/");
+        text_response.setText("No login\\");
         list.add(text_response);
         return list;
     }

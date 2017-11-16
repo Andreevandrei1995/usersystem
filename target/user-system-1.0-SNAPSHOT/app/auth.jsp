@@ -41,7 +41,7 @@
             };
             $scope.auth = function(message){
                 $http.post("http://localhost:8081/auth_decision",message).then(function(response){
-                    if (response.data == true){
+                    if (response.data === true){
                         var elem1 = document.createElement("form");
 
                         elem1.setAttribute("name","forma");
